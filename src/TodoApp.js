@@ -17,12 +17,17 @@ const AddTodoContainer = connect(
 
 // Todo List
 const mapStateToListProps = state => ({
-  todos: state.todos
+  todos: state.todos,
+  filter: state.filters
+});
+
+const mapDispatchToListProps = dispatch => ({
+  switchState: id => dispatch({ type: "switch", id })
 });
 
 const TodoListContainer = connect(
   mapStateToListProps,
-  null
+  mapDispatchToListProps
 )(TodoList);
 
 // Filter buttons
@@ -31,8 +36,9 @@ const mapStateToFilterProps = state => ({
 });
 
 const mapDispatchToFilterProps = dispatch => ({
-  setFilter: filter => dispatch({ type: "filter", filter: filter })
+  setFilter: filter => dispatch({ type: "filter", filter })
 });
+
 const FilterContainer = connect(
   mapStateToFilterProps,
   mapDispatchToFilterProps

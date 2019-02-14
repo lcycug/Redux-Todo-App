@@ -11,6 +11,14 @@ export const todos = (state = [], action) => {
           completed: false
         }
       ];
+    case "switch":
+      state.map(todo => {
+        if (todo.id === action.id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      });
+      return state;
     default:
       return state;
   }
