@@ -15,6 +15,7 @@ export default ({ filter, todos, switchState }) => {
 
   return filteredTodos.map(todo => (
     <div
+      className="line"
       key={todo.id}
       onClick={() => switchState(todo.id)}
       style={todo.completed ? { textDecoration: "line-through" } : null}>

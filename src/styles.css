@@ -11,3 +11,6 @@ a.active {
   cursor: not-allowed;
   font-weight: bold;
 }
+.line {
+  cursor: pointer;
+}

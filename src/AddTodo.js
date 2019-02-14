@@ -1,6 +1,6 @@
 import React from "react";
 
-export default props => {
+export default ({ addTodo }) => {
   let input;
   console.log(input);
   return (
@@ -15,13 +15,14 @@ export default props => {
       <button
         onClick={() => {
           if (!input) return;
-          props.addTodo(input);
+          addTodo(input);
           input = "";
           document.getElementById("input").value = "";
           document.getElementById("input").focus();
         }}>
         +
       </button>
+      <hr />
     </>
   );
 };
