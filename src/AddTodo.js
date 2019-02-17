@@ -11,6 +11,7 @@ export default ({ addTodo }) => {
         onChange={ev => {
           input = ev.target.value;
         }}
+        autoComplete="off"
       />
       <button
         onClick={() => {
